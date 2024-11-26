@@ -1,0 +1,4 @@
+- hosts: _ansible_react
+  tasks:
+    - ansible.builtin.debug:
+        var: hostvars['ansible_react'].ansibe_host

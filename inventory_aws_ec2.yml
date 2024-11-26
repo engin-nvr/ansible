@@ -1,0 +1,14 @@
+plugin: aws_ec2
+regions:
+  - "us-east-1"
+filters:
+  tag:stack: mern_project
+keyed_groups:
+  - key: tags.Name
+  - key: tags.environment
+compose: # bu kısımda degiskenleri belirttik
+  ansible_host: public_ip_address # burda da ansible yapılandırdıgım makinenin ip adreslerini yazdım
+  ans_private_ip: private_ip_address
+
+hostnames:
+  - tag:Name
